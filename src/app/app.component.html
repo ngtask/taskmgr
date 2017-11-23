@@ -1,0 +1,39 @@
+
+
+<md-sidenav-container [class.myapp-dark-theme]="darkTheme">
+  <!--默认over push side   左start 右end mode,align可省略 -->
+  <md-sidenav #sidenav mode="over">
+    <app-sidebar></app-sidebar>
+  </md-sidenav>
+  <div class="site">
+    <header>
+      <app-header (click)="sidenav.toggle()" (toggleDarkTheme)="switchTheme($event)"></app-header>
+      <!--<app-header></app-header>-->
+    </header>
+    <main>
+      <!--<button (click)="sidenav.open()">打开侧边栏</button>-->
+
+      <a [routerLink]="[ '/login', 1 ]">login</a>
+      <a [routerLink]="[ '/login' ]" routerLinkActive="active">nlogin</a>
+      <a routerLink="/login" routerLinkActive="active">/login</a>
+      <a routerLink="/register" routerLinkActive="active">/register</a>
+      <a routerLink="/project" routerLinkActive="active">/project</a>
+      <a routerLink="/tasklist" routerLinkActive="active">tasklist</a>
+      <router-outlet></router-outlet>
+
+
+      <!--数组 [@square] 为“ 触发器square ”对应的名字-->
+      <!--<div class="square" [@square]="'green'"></div>-->
+  
+        <!--<div class="square" [@square]="'squareState'" (click)="onClick()"></div>-->
+
+    </main>
+    <footer>
+      <app-footer></app-footer>
+    </footer>
+  </div>
+</md-sidenav-container>
+
+
+
+
